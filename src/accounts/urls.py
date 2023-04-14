@@ -1,6 +1,4 @@
-from django.conf.urls import url
-
-
+from django.urls import path
 from .views import (
     login_view,
     register_view,
@@ -10,7 +8,7 @@ from .views import (
 app_name = 'accounts'
 
 urlpatterns = [
-    url(r'^login/$', login_view, name='login'),
-    url(r'^register/$', register_view, name='register'),
-    url(r'^logout/$', logout_view, name='logout'),
+    path('login/', login_view, name='login'),
+    path('register/', register_view, name='register'),
+    path('logout/', logout_view, name='logout'),
 ]

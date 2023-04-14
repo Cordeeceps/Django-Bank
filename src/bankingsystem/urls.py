@@ -10,11 +10,11 @@ Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
+    1. Import the include() function: from django.urls import path, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
@@ -23,14 +23,15 @@ from core.views import home, about
 
 urlpatterns = [
     # admin
-    url(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     # Accounts
-    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
     # core
-    url(r'^$', home, name='home'),
-    url(r'^about/$', about, name='about'),
+    path('', home, name='home'),
+    path('about/', about, name='about'),
     # transactions
-    url(r'^', include('transactions.urls', namespace='transactions')),
+    path('deposit/', include('transactions.urls', namespace='transactions')),
+    path('withdrawal/', include('transactions.urls', namespace='transactions')),
 ]
 
 

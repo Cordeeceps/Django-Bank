@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\env",
+    "\\env\\Lib",
+    "\\env\\Lib\\site-packages",
+    "\\env\\Lib\\site-packages\\django",
+    "\\env\\Lib\\site-packages\\django\\conf",
+    "\\env\\Lib\\site-packages\\django\\conf\\urls",
+    "\\src"
+  ],
+  "PreviewInSolutionExplorer": false
+}
